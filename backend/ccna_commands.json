@@ -1,0 +1,250 @@
+[
+  {
+    "topic": "Static Routes",
+    "command": "ip route 0.0.0.0 0.0.0.0 <next-hop-address>",
+    "mode": "R(config)#",
+    "description": "Sets a default route using next-hop address"
+  },
+  {
+    "topic": "Static Routes",
+    "command": "ip route 0.0.0.0 0.0.0.0 <interface-name>",
+    "mode": "R(config)#",
+    "description": "Sets a default route using exit interface"
+  },
+  {
+    "topic": "Loopback Interface",
+    "command": "interface loopback <number>",
+    "mode": "R(config)#",
+    "description": "Creates a loopback interface"
+  },
+  {
+    "topic": "SFP Interfaces",
+    "command": "media-type sfp",
+    "mode": "D(config-if)#",
+    "description": "Sets interface media type to SFP"
+  },
+
+  /* VLANs */
+  {
+    "topic": "VLANs",
+    "command": "show vlan",
+    "mode": "S>",
+    "description": "Displays VLAN information"
+  },
+  {
+    "topic": "VLANs",
+    "command": "show vlan brief",
+    "mode": "S>",
+    "description": "Displays brief VLAN summary"
+  },
+  {
+    "topic": "VLANs",
+    "command": "show interfaces <interface> switchport",
+    "mode": "S#",
+    "description": "Displays switchport configuration"
+  },
+  {
+    "topic": "VLANs",
+    "command": "show interface trunk",
+    "mode": "S#",
+    "description": "Displays trunking information"
+  },
+  {
+    "topic": "VLANs",
+    "command": "vlan <id>",
+    "mode": "S(config)#",
+    "description": "Creates a VLAN"
+  },
+  {
+    "topic": "VLANs",
+    "command": "name <name>",
+    "mode": "S(config-vlan)#",
+    "description": "Names a VLAN"
+  },
+  {
+    "topic": "VLANs",
+    "command": "interface range <interface> - <interfaceOrNb>",
+    "mode": "S(config)#",
+    "description": "Configures a range of interfaces"
+  },
+  {
+    "topic": "VLANs",
+    "command": "switchport mode access",
+    "mode": "S(config-if)#",
+    "description": "Sets an interface to access mode"
+  },
+  {
+    "topic": "VLANs",
+    "command": "switchport access vlan <id>",
+    "mode": "S(config-if)#",
+    "description": "Assigns an access VLAN"
+  },
+  {
+    "topic": "VLANs",
+    "command": "switchport mode trunk",
+    "mode": "S(config-if)#",
+    "description": "Sets an interface to trunk mode"
+  },
+  {
+    "topic": "VLANs",
+    "command": "switchport trunk native vlan <id>",
+    "mode": "S(config-if)#",
+    "description": "Configures native VLAN on trunk"
+  },
+  {
+    "topic": "VLANs",
+    "command": "switchport trunk allowed vlan <id list>",
+    "mode": "S(config-if)#",
+    "description": "Sets allowed VLANs on trunk"
+  },
+  {
+    "topic": "Inter-VLAN Routing",
+    "command": "interface <interface>.<number>",
+    "mode": "R(config)#",
+    "description": "Creates a subinterface"
+  },
+  {
+    "topic": "Inter-VLAN Routing",
+    "command": "encapsulation dot1q <id>",
+    "mode": "R(config-subif)#",
+    "description": "Sets 802.1Q encapsulation"
+  },
+
+  /* OSPF */
+  {
+    "topic": "OSPF",
+    "command": "router ospf <process-id>",
+    "mode": "R(config)#",
+    "description": "Enters OSPF configuration mode"
+  },
+  {
+    "topic": "OSPF",
+    "command": "router-id <rid>",
+    "mode": "R(config-router)#",
+    "description": "Sets OSPF router ID"
+  },
+  {
+    "topic": "OSPF",
+    "command": "network <network-address> <wildcard-mask> area <area-id>",
+    "mode": "R(config-router)#",
+    "description": "Advertises network into OSPF"
+  },
+  {
+    "topic": "OSPF",
+    "command": "ip ospf <process-id> area <area-id>",
+    "mode": "R(config-if)#",
+    "description": "Assigns interface to OSPF area"
+  },
+  {
+    "topic": "OSPF",
+    "command": "ip ospf priority <value>",
+    "mode": "R(config-if)#",
+    "description": "Sets DR/BDR election priority"
+  },
+  {
+    "topic": "OSPF",
+    "command": "ip ospf cost <value>",
+    "mode": "R(config-if)#",
+    "description": "Sets OSPF interface cost"
+  },
+  {
+    "topic": "OSPF",
+    "command": "passive-interface <interface-name>",
+    "mode": "R(config-router)#",
+    "description": "Stops OSPF adjacency but advertises network"
+  },
+  {
+    "topic": "OSPF",
+    "command": "default-information originate",
+    "mode": "R(config-router)#",
+    "description": "Advertises default route"
+  },
+  {
+    "topic": "OSPF",
+    "command": "clear ip ospf process",
+    "mode": "R#",
+    "description": "Restarts OSPF process"
+  },
+
+  /* ACLs */
+  {
+    "topic": "Standard ACL",
+    "command": "access-list <number> {deny|permit} <src-addr> <src-wildcard>",
+    "mode": "R(config)#",
+    "description": "Creates numbered standard ACL"
+  },
+  {
+    "topic": "Standard ACL",
+    "command": "ip access-list standard <name>",
+    "mode": "R(config)#",
+    "description": "Creates named standard ACL"
+  },
+  {
+    "topic": "Standard ACL",
+    "command": "ip access-group <number|name> {in|out}",
+    "mode": "R(config-if)#",
+    "description": "Applies ACL to interface"
+  },
+  {
+    "topic": "Extended ACL",
+    "command": "access-list <number> {deny|permit} <protocol> <src-addr> <src-wildcard> <dest-addr> <dest-wildcard>",
+    "mode": "R(config)#",
+    "description": "Creates extended ACL rule"
+  },
+  {
+    "topic": "ACL Verification",
+    "command": "show access-lists",
+    "mode": "R#",
+    "description": "Shows ACLs"
+  },
+
+  /* NAT */
+  {
+    "topic": "NAT",
+    "command": "ip nat inside",
+    "mode": "R(config-if)#",
+    "description": "Marks inside NAT interface"
+  },
+  {
+    "topic": "NAT",
+    "command": "ip nat outside",
+    "mode": "R(config-if)#",
+    "description": "Marks outside NAT interface"
+  },
+  {
+    "topic": "Static NAT",
+    "command": "ip nat inside source static <priv-ip> <public-ip>",
+    "mode": "R(config)#",
+    "description": "Creates static NAT mapping"
+  },
+  {
+    "topic": "Dynamic NAT",
+    "command": "ip nat pool <pool-name> <start-ip> <end-ip> netmask <netmask>",
+    "mode": "R(config)#",
+    "description": "Creates pool for dynamic NAT"
+  },
+  {
+    "topic": "NAT",
+    "command": "ip nat inside source list <acl-number> pool <pool-name>",
+    "mode": "R(config)#",
+    "description": "Enables dynamic NAT"
+  },
+  {
+    "topic": "PAT",
+    "command": "ip nat inside source list <acl-number> interface <interface> overload",
+    "mode": "R(config)#",
+    "description": "Enables Port Address Translation"
+  },
+  {
+    "topic": "NAT Verification",
+    "command": "show ip nat translations",
+    "mode": "R#",
+    "description": "Displays NAT table entries"
+  },
+  {
+    "topic": "NAT Verification",
+    "command": "show ip nat statistics",
+    "mode": "R#",
+    "description": "Displays NAT statistics"
+  }
+]
